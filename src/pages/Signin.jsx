@@ -30,7 +30,7 @@ const Signin = () => {
       }
       else {
           alert("Login Successfully");
-          navigate('/home')
+          navigate('/dashboard')
 
       }
     }
