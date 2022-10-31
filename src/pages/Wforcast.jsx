@@ -5,6 +5,9 @@ const Wforcast = () => {
   return (
     <>
     <Navbar/>
+   
+      
+
     </>
   )
 }
