@@ -16,10 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/signin' element={<Signin />} />
-          <Route path='/dashboard' element={<Navbar/>} />
-
           <Route path='/dashboard' element={<Wdashboard/>} />
-
           <Route path='/forcast' element={<Wforcast />} />
         </Routes>
       </BrowserRouter>

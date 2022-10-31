@@ -50,7 +50,7 @@ const Signin = () => {
           <input type='password' className='inp' name='password' onChange={inputEvent} placeholder='Password' required autoComplete='off' />
           <button type='submit' className='btn'>Sign In</button>
           <br />
-          <p className='already'>Don't have account <span><NavLink to='/home'>Sign Up</NavLink></span></p>
+          <p className='already'>Don't have account? <span><NavLink to='/home'>Sign Up</NavLink></span></p>
         </div>
 
       </form>
