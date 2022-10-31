@@ -1,0 +1,11 @@
+.navbar a {
+    /* font-size: 1.3rem; */
+    /* text-transform: capitalize; */
+    text-decoration: none;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+
+    
+
+  }

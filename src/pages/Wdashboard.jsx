@@ -1,10 +1,10 @@
 import React from 'react'
-
+import Navbar from '../components/Navbar'
 
 const Wdashboard = () => {
   return (
     <div>
-        <h1>Dashboard</h1>
+      <Navbar/>
     </div>
   )
 }
