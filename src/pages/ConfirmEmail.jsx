@@ -47,7 +47,7 @@ const ConfirmEmail = () => {
             </div>
             <div className="container">
                 <input type='email' className='inp' name='email' onChange={inputEvent} required placeholder='email' autoComplete='off' />
-                <button type='submit' className='btn'>Submit</button> <br/>
+                <button type='submit' className='btnn'>Submit</button> <br/>
                 <p className='already'>Don't have account? <span><NavLink to='/home'>Sign Up</NavLink></span></p>              
 
             </div>

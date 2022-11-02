@@ -51,7 +51,7 @@ const Signin = () => {
         <div className="container">
           <input type='email' className='inp' name='email' onChange={inputEvent} placeholder='email' required autoComplete='off' />
           <input type='password' className='inp' name='password' onChange={inputEvent} placeholder='Password' required autoComplete='off' />
-          <button type='submit' className='btn'>Sign In</button>
+          <button type='submit' className='btnn'>Sign In</button>
           <br />
           <p className='already'>Don't have account? <span><NavLink to='/home'>Sign Up</NavLink></span><br /><span><NavLink to='/confirmEmail'>Forgot password?</NavLink></span></p>
         </div>

@@ -67,7 +67,7 @@ const ConfirmPassword = () => {
             <div className="container">
                 <input type='password' className='inp' name='password' onChange={inputEvent} required placeholder='New Password' autoComplete='off'/>
                 <input type='password' className='inp' name='cPassword' onChange={inputEvent} required placeholder='Confirm Password' autoComplete='off'/>
-                <button type='submit' className='btn'>Submit</button>
+                <button type='submit' className='btnn'>Submit</button>
                 <br/>
                 {/* <p className='already'>Already have account? <span><NavLink to='/signin'>Sign In</NavLink></span></p> */}
 

@@ -52,7 +52,7 @@ const Home = () => {
         <div className="container">
           <input type='email' className='inp' name='email' onChange={inputEvent} required placeholder='email' autoComplete='off' />
           <input type='password' className='inp' name='password' onChange={inputEvent} required placeholder='Password' autoComplete='off' />
-          <button type='submit' className='btn'>Sign Up</button>
+          <button type='submit' className='btnn'>Sign Up</button>
           <br />
           <p className='already'>Already have account? <span><NavLink to='/signin'>Sign In</NavLink></span></p>
 

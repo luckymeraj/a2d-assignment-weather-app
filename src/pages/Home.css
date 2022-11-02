@@ -27,7 +27,7 @@ form {
     box-sizing: border-box;
 }
 
-.btn {
+.btnn {
     background-color: #089bf6;
     color: white;
     padding: 14px 20px;
@@ -39,7 +39,7 @@ form {
 
 }
 
-.btn:hover {
+.btnn:hover {
     opacity: 0.8;
 }
 
