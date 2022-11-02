@@ -8,6 +8,8 @@ import Signin from './pages/Signin';
 import Navbar from './components/Navbar';
 import Wdashboard from './pages/Wdashboard';
 import Wforcast from './pages/Wforcast';
+import ConfirmEmail from './pages/ConfirmEmail';
+import ConfirmPassword from './pages/ConfirmPassword';
 function App() {
   return (
     <>
@@ -18,6 +20,11 @@ function App() {
           <Route path='/signin' element={<Signin />} />
           <Route path='/dashboard' element={<Wdashboard/>} />
           <Route path='/forcast' element={<Wforcast />} />
+          <Route path='/confirmEmail' element={<ConfirmEmail />} />
+          <Route path='/confirmPassword' element={<ConfirmPassword />} />
+
+
+
         </Routes>
       </BrowserRouter>
 

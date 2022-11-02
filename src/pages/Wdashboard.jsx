@@ -1,36 +1,56 @@
-import React from 'react'
+import React, {useEffect, useState } from 'react'
 import './Wdashboard.css'
 import Navbar from '../components/Navbar'
-import { NavLink } from 'react-router-dom'
-
+import { getWeatherData } from '../WeatherService'
 
 const Wdashboard = () => {
+  const [weather, setWeather] = useState(null)
+  const [city,findCity]=useState('asansol')
+  const fetchWeatherData = async () => {
+    const data = await getWeatherData(city)
+    // console.log(data);
+    setWeather(data)
+  }
+  useEffect(() => {
+   
+    fetchWeatherData();
+  }, [city])
+//  console.log(city);
+
+  
   return (
     <>
-      <Navbar />
-      
+      <Navbar findCity={findCity} />
+  
+      {
+        weather && (
+          <div className="main-container">
+        
 
- <div className="col-md-4 col-10 mx-auto"  >
-      <div className="card" >
-      <p className="card-text" id='card-text' >
-            London
-          </p>
-        <img src='https://freepngimg.com/thumb/categories/2275.png' className="card-img-top" id='card-img-top'  />
-        <div className="card-body">
-          <h5 className="card-title" id='card-title' >30 ℃</h5>
-         
-          <NavLink to="/forcast" className="btn btn-primary">
-            Forcast
-          </NavLink>
+
+        <div className="city ">
+          <h2 className="city-name">
+            <span>{`${weather.name}`}</span>
+            <sup>{`${weather.country}`}</sup>
+          </h2>
+          <div className="city-temp">
+          {`${weather.temp.toFixed()}`}
+            <sup>&deg;C</sup>
+          </div>
+          <div className="info">
+            <img className="city-icon" src={`${weather.iconURL}`} />
+            <p id='disc'>{`${weather.description}`}</p>
+          </div>
         </div>
+
       </div>
-    </div>
 
-
-
+        )
+      }
       
+
+
     </>
   )
 }
-
 export default Wdashboard

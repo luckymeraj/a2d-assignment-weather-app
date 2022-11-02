@@ -1,36 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
-import { NavLink } from 'react-router-dom'
-const Navbar = () => {
+import { NavLink, useNavigate } from 'react-router-dom'
+const Navbar = ({ findCity }) => {
+    const [city, setCity] = useState();
+    const [searchCity, setSearchCity] = useState()
+    const navigate = useNavigate()
+    const onClickHandler = (e) => {
+        e.preventDefault()
+        // console.log(city);
+        setSearchCity(city)
+    }
+    findCity(searchCity)
+    const logoutHandler = () => {
+        // localStorage.removeItem("userDetails")
+        alert("Log-Out Successfully")
+
+        navigate('/signin')
+    }
+
     return (
         <>
-            <nav class="navbar  fixed-top">
-                <div class="container-fluid">
-                    {/* <a class="navbar-brand" href="#">Offcanvas navbar</a> */}
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
+            <nav className="navbar  fixed-top">
+                <div className="container-fluid">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">A2D Forcasting</h5>
+                    <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div className="offcanvas-header">
+                            {/* <h5 className="offcanvas-title" id="offcanvasNavbarLabel">A2D Forcasting</h5> */}
 
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
-                        <div class="offcanvas-body">
-                            <form class="d-flex mt-2" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                                <button class="btn btn-outline-success " type="submit">Search</button>
+                        <div className="offcanvas-body">
+                            <img src='https://a2d.co.in/wp-content/uploads/2022/01/cropped-SQ-Black-512x512-1.jpg' alt='avatar' className='avatar' style={{ height: '70px', width: '70px' }} />
+
+                            <form className="d-flex mt-2" role="search">
+                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="city" onChange={(e) => { setCity(e.target.value) }} />
+                                <button className="btn btn-outline-success " type="submit" onClick={onClickHandler}>Search</button>
                             </form>
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li class="nav-item">
-                                    <NavLink class="nav-link active" aria-current="page" to='/dashboard' >Dashboard</NavLink>
+                            <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                <li className="nav-item">
+                                    <NavLink className="nav-link active" aria-current="page" to='/dashboard' style={{ color: "#36abf3", fontSize: "1.5em" }} >Dashboard</NavLink>
                                 </li>
-                                <li class="nav-item">
-                                    <NavLink class="nav-link active" aria-current="page" to='/forcast' >Forcast report</NavLink>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link active" aria-current="page" to='/forcast' style={{ color: "#36abf3", fontSize: "1.5em" }} >Forcast report</NavLink>
                                 </li>
 
                             </ul>
-                            <button class="btn btn-outline-success" type="submit">Logout</button>
+                            <button className="btn btn-outline-success" type="submit" onClick={logoutHandler} >Logout</button>
+                            <p style={{ textAlign: "center" }}> A2D Technology <br />Copyright © 2022 All Right Reserved</p>
 
 
                         </div>
@@ -40,7 +58,7 @@ const Navbar = () => {
 
 
 
-         
+
         </>
 
     )

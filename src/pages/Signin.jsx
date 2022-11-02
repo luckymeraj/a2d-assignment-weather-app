@@ -5,7 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 const Signin = () => {
   const [data, setData] = useState({ email: "", password: "" })
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const inputEvent = (event) => {
     const { name, value } = event.target;
 
@@ -18,7 +18,7 @@ const Signin = () => {
   };
   const formSubmit = (e) => {
     e.preventDefault();
-    const {email,password}=data
+    const { email, password } = data
     const getUserArr = localStorage.getItem('userDetails')
     if (getUserArr && getUserArr.length) {
       const userData = JSON.parse(getUserArr)
@@ -29,10 +29,14 @@ const Signin = () => {
         alert("invalid email or password")
       }
       else {
-          alert("Login Successfully");
-          navigate('/dashboard')
+        alert("Sign-In Successfully");
+        navigate('/dashboard')
 
       }
+    }
+    else {
+      alert("Please Sign-Up first")
+      navigate('/home')
     }
 
   };
@@ -50,7 +54,7 @@ const Signin = () => {
           <input type='password' className='inp' name='password' onChange={inputEvent} placeholder='Password' required autoComplete='off' />
           <button type='submit' className='btn'>Sign In</button>
           <br />
-          <p className='already'>Don't have account? <span><NavLink to='/home'>Sign Up</NavLink></span></p>
+          <p className='already'>Don't have account? <span><NavLink to='/home'>Sign Up</NavLink></span><br /><span><NavLink to='/confirmEmail'>Forgot password?</NavLink></span></p>
         </div>
 
       </form>
