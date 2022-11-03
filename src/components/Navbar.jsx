@@ -33,7 +33,7 @@ const Navbar = ({ findCity }) => {
                         <div className="offcanvas-body">
                             <img src='https://a2d.co.in/wp-content/uploads/2022/01/cropped-SQ-Black-512x512-1.jpg' alt='avatar' className='avatar' style={{ height: '70px', width: '70px' }} />
 
-                            <form className="d-flex mt-2" role="search">
+                            <form className="d-flex mt-2 navForm" role="search">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="city" style={{width:'80%' ,borderRadius:'30px'}} onChange={(e) => { setCity(e.target.value) }} />
                                 <button className="btnn btn-outline-success "  style={{width:'20%' ,borderRadius:'30px'}} type="submit" onClick={onClickHandler}><i class="fa fa-search" aria-hidden="true"></i>
                                 </button>

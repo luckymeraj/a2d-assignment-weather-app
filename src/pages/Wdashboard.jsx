@@ -15,7 +15,7 @@ const Wdashboard = () => {
       setBg('https://wallpapercave.com/wp/wp7260934.jpg')
     }
     else if(data.temp<25&&data.temp>15){
-      setBg('https://media1.popsugar-assets.com/files/thumbor/n8bUt1yPUD0zvO0XmWNFuVj763k/685x0:3345x2660/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2020/01/07/726/n/1922441/419ff9b05e14b139162ef6.64727550_/i/Best-Winter-Photos.jpg')
+      setBg('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8NZMfh62xwJWhW6gSolEuUa2ugjeEUEXnOg&usqp=CAU')
     }
     else if(data.temp<=15){
       setBg('https://images2.minutemediacdn.com/image/upload/c_fill,w_1440,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/111798556-565x376-1-5102d44ede42632f8b80b83ccde7e7a1.jpg')
