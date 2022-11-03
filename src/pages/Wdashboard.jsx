@@ -11,7 +11,7 @@ const Wdashboard = () => {
     const data = await getWeatherData(city)
     // console.log(data);
     setWeather(data)
-    if(data.temp>=25){
+    if(data.temp>=20){
       setBg('https://wallpapercave.com/wp/wp7260934.jpg')
     }
     else if(data.temp<25&&data.temp>15){
